@@ -27,6 +27,9 @@ const HomeScreen = ({ match }) => {
   return (
     <>
       <Meta />
+      <button><Link to='/category'>
+          category
+        </Link></button>
       {!keyword ? (
         <ProductCarousel />
       ) : (

@@ -155,6 +155,17 @@ const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(3)
 
   res.json(products)
+});
+
+const getCategoriesProducts = asyncHandler(async(req, res) => {
+  const pro = await Product.find({category: req.body.category});
+  if (pro) {
+    // console.log(pro);
+    res.status(201).json({ status:200,  message: pro })
+  }else{
+    res.status(404)
+    throw new Error('Product not found')
+  }
 })
 
 export {
@@ -165,4 +176,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getCategoriesProducts
 }
