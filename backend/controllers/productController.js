@@ -160,7 +160,6 @@ const getTopProducts = asyncHandler(async (req, res) => {
 const getCategories = asyncHandler(async(req, res) => {
   const pro = await Product.find({},{category: 1});
   if (pro) {
-    // console.log(pro);
     res.status(201).json({ status:200,  message: pro })
   }else{
     res.status(404)
@@ -171,7 +170,6 @@ const getCategories = asyncHandler(async(req, res) => {
 const getCategoryProducts = asyncHandler(async(req, res) => {
   const pro = await Product.find({category: req.body.category});
   if (pro) {
-    // console.log(pro);
     res.status(201).json({ status:200,  message: pro })
   }else{
     res.status(404)
