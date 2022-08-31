@@ -31,7 +31,7 @@ const HomeScreen = ({ match }) => {
         <ProductCarousel />
       ) : (
         <Link to='/' className='btn btn-light'>
-          Go Back
+          Go Backs
         </Link>
       )}
       <h1>Latest Products</h1>
